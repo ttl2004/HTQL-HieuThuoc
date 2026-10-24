@@ -27,6 +27,7 @@
 |---|---|---|---|---|---|
 | Trần Tiểu Long | drugdb-core | #3 | #4 | Nguyễn Hoa Thanh Tùng | Done |
 | Trần Tiểu Long | drugdb-core | #1 | #2 | Nguyễn Hoa Thanh Tùng | Done |
+| Nguyễn Hoa Thanh Tùng | pharmacy-management-admin-frontend| | #1 | Trần Tiểu Long | Done |
 
 
 ## Số liệu & kiểm thử
