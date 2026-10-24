@@ -1,4 +1,4 @@
-# HTQY-HieuThuoc
+# HTQL-HieuThuoc
 
 Repo quản lý tiến độ và lưu minh chứng (evidence) hằng tuần của đồ án **Hệ thống quản lý nhà thuốc**.
 
