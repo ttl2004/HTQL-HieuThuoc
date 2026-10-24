@@ -1,0 +1,27 @@
+group,metric,value,unit,note
+index,drugs,50,drugs,tap-mau-thuoc.csv tieng Viet
+index,chunks_sqlite,1019,chunks,
+index,vectors_chromadb,1019,vectors,khop voi SQLite
+index,avg_chunks_per_drug,20.4,chunks,
+index,avg_chunk_length,777,chars,ke ca tieu de
+index,embedding_time_cpu,138,seconds,multilingual-e5-small 384 chieu
+index,total_build_time,212,seconds,gom tai mo hinh lan dau
+retrieval_drug,hit_at_1,1.0,ratio,50 cau hoi
+retrieval_drug,hit_at_10,1.0,ratio,
+retrieval_drug,mrr_at_10,1.0,ratio,
+retrieval_drug_section,hit_at_1,0.68,ratio,
+retrieval_drug_section,hit_at_3,0.84,ratio,
+retrieval_drug_section,hit_at_5,0.92,ratio,
+retrieval_drug_section,hit_at_10,1.0,ratio,
+retrieval_drug_section,mrr_at_10,0.779,ratio,
+retrieval_drug_section,hit_at_6_default_k,0.96,ratio,48/50
+generation_in_data,has_citation,100,%,50/50; k=6 deepseek-flash temp 0.2
+generation_in_data,valid_citation,100,%,50/50
+generation_in_data,cite_correct_drug,100,%,50/50
+generation_in_data,cite_correct_drug_section,96,%,48/50
+generation_in_data,has_disclaimer,100,%,50/50
+generation_in_data,no_hallucinated_numbers,100,%,50/50
+generation_in_data,avg_latency,4.9,seconds,
+generation_in_data,max_latency,14.9,seconds,
+generation_out_of_data,refusal_rate,100,%,5/5
+generation_out_of_data,fabricated_answers,0,answers,0/5

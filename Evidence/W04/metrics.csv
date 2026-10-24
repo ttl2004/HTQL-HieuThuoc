@@ -1,0 +1,3 @@
+part,repo,file,description
+ETL/CSDL duoc,drugdb-core,metrics/drugdb-core.csv,"Thu thap SPL, ETL1, corpus, ETL2 21 cot, tu dien, thu nghiem dich"
+RAG,pharmacy-base-rag,metrics/pharmacy-base-rag.csv,"Chi muc ngu nghia, danh gia truy xuat va sinh cau tra loi"

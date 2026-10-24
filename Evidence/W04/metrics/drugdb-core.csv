@@ -1,0 +1,54 @@
+group,metric,value,unit,note
+thu_thap,spl_xml_otc,1737,files,DailyMed 09/2026
+thu_thap,spl_xml_prescription,1629,files,
+thu_thap,spl_xml_homeopathic,228,files,
+thu_thap,spl_xml_animal,82,files,
+thu_thap,spl_xml_other,58,files,
+thu_thap,spl_xml_total,3734,files,
+thu_thap,dsv_index_files,3,files,1 file bi loai do trung MD5
+etl1,runtime,63,seconds,chay toan bo du lieu 24/10/2026
+etl1,rows_label_document,3734,rows,1.2 MB
+etl1,rows_drug_knowledge,5226,rows,1.2 MB
+etl1,rows_drug_ingredient,49803,rows,3.2 MB
+etl1,rows_ingredient,2854,rows,0.1 MB
+etl1,rows_drug_package,12609,rows,1.0 MB
+etl1,rows_drug_part,257,rows,< 0.1 MB
+etl1,rows_organization,1198,rows,0.1 MB
+etl1,rows_label_section,114808,rows,348.3 MB
+etl1,rows_spl_document_index,159437,rows,40.4 MB
+etl1,rows_spl_document_delta,139,rows,< 0.1 MB
+etl1,rows_total,350065,rows,10 bang CSV
+etl1_integrity,primary_key_unique,pass,,
+etl1_integrity,foreign_key_no_orphan,pass,,
+etl1_integrity,tree_parent_id_valid,pass,,label_section va drug_package
+etl1_integrity,ingredient_order_contiguous,pass,,thu tu 1..n moi thuoc
+etl1_integrity,row_counts_match_design,pass,,"label_document, drug_knowledge, drug_ingredient, label_section"
+etl1_integrity,dsv_parse_error_rows,0,rows,
+corpus,documents,3734,docs,label_section.jsonl 361.7 MB
+corpus,sections,114808,sections,
+corpus,sections_with_plain_text,85.6,%,98299 muc
+corpus,sections_with_xml,86.7,%,99565 muc
+corpus,total_plain_text_chars,99274911,chars,tieng Anh
+corpus,avg_section_length,1009,chars,
+corpus,unclassified_sections,34.6,%,SPL UNCLASSIFIED SECTION
+etl2,runtime,115,seconds,gom dich tu dien va tao lai du lieu
+etl2,output_rows,4991,rows,21 cot mau CSDL Duoc quoc gia
+etl2,output_size,83.6,MB,ds-thuoc-dailymed.csv
+etl2,required_col_fill_so_dang_ky,94.1,%,293 thuoc khong co ma phe duyet
+etl2,required_col_fill_loai_kiem_soat,0,%,de trong co chu dich
+etl2,col_fill_chong_chi_dinh,80.8,%,
+etl2,col_fill_cach_bao_quan,34.1,%,
+etl2,col_fill_tac_dung_phu,59.6,%,
+tu_dien,terms_total,104,terms,"duong dung 31, bao bi 31, don vi dem 21, don vi do 21"
+tu_dien,terms_translated,104,terms,"DeepSeek, bat dau tu tu dien trong"
+tu_dien,terms_error,0,terms,
+dich_thu_nghiem,sample_drugs,50,drugs,"292 o, 614709 ky tu"
+dich_thu_nghiem,coverage_deepseek,100,%,292/292
+dich_thu_nghiem,coverage_vinai_local,99.7,%,291/292
+dich_thu_nghiem,coverage_vinai_kaggle,99.3,%,290/292
+dich_thu_nghiem,number_preservation_deepseek,98.6,%,216/219
+dich_thu_nghiem,number_preservation_vinai_local,88.6,%,194/219
+dich_thu_nghiem,number_preservation_vinai_kaggle,100,%,219/219
+dich_thu_nghiem,cost_deepseek,0.75,USD,50 thuoc; uoc tinh ~100 USD toan bo
+dich_thu_nghiem,time_deepseek,10,minutes,uoc tinh
+dich_thu_nghiem,time_vinai_kaggle,40,minutes,uoc tinh
