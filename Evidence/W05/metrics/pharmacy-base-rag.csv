@@ -1,0 +1,37 @@
+group,metric,value,unit,note
+eval_set,questions_total,100,questions,hop le khong trung
+eval_set,questions_in_data,80,questions,"7 muc, phu 50/50 thuoc"
+eval_set,questions_out_of_scope,20,questions,"10 thuoc ngoai du lieu, 4 chan doan/ke lieu/anh/gia, 6 ngoai linh vuc"
+eval_set,q_lieu_luong,22,questions,
+eval_set,q_chi_dinh,15,questions,
+eval_set,q_chong_chi_dinh,13,questions,
+eval_set,q_tac_dung_phu,11,questions,
+eval_set,q_bao_quan,8,questions,
+eval_set,q_khuyen_cao,8,questions,
+eval_set,q_tac_dung,3,questions,
+retrieval_drug,hit_at_1,1.0,ratio,80 cau; top-k 10
+retrieval_drug,hit_at_3,1.0,ratio,
+retrieval_drug,hit_at_5,1.0,ratio,
+retrieval_drug,hit_at_10,1.0,ratio,
+retrieval_drug,mrr_at_10,1.0,ratio,
+retrieval_drug_section,hit_at_1,0.675,ratio,
+retrieval_drug_section,hit_at_3,0.85,ratio,
+retrieval_drug_section,hit_at_5,0.925,ratio,
+retrieval_drug_section,hit_at_10,1.0,ratio,
+retrieval_drug_section,mrr_at_10,0.78,ratio,
+retrieval_drug_section,miss_top5,6,questions,6/80; dung thuoc hang 1 nhung muc dung o hang 6-9
+retrieval_by_section,chong_chi_dinh_hit_at_1,0.462,ratio,yeu nhat
+retrieval_by_section,chong_chi_dinh_mrr,0.58,ratio,
+retrieval_by_section,chi_dinh_hit_at_1,0.533,ratio,
+generation_in_data,has_citation,100,%,80/80; k=6 DeepSeek qua OpenRouter
+generation_in_data,valid_citation,100,%,80/80
+generation_in_data,cite_correct_drug,100,%,80/80
+generation_in_data,cite_correct_drug_section,96,%,77/80; 3 cau sai do truy xuat
+generation_in_data,refusal_keyword,11,%,9/80 dem theo tu khoa
+generation_in_data,refusal_full_manual,2,questions,doc tay: 7/9 chi tu choi y phu
+generation_in_data,has_disclaimer,100,%,80/80
+generation_out_of_scope,has_citation,19,answers,19/20; dung de giai thich ngu canh
+generation_out_of_scope,refusal_rate,100,%,20/20 ke ca ca kho warfarin/insulin
+generation_out_of_scope,incomplete_refusal,1,answers,yeu cau ke lieu theo creatinin van liet ke lieu cefdinir
+generation,avg_latency,4.2,seconds,100 cau
+generation,max_latency,18.3,seconds,

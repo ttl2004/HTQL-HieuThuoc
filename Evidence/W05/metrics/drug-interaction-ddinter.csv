@@ -1,0 +1,56 @@
+group,metric,value,unit,note
+nguon_du_lieu,ddinter_atc_files,14,files,"A, B, C, D, G, H, J, L, M, N, P, R, S, V"
+nguon_du_lieu,ddinter_raw_rows,507655,rows,14 file tai ve
+nguon_du_lieu,ddinter_drugs,1971,drugs,
+nguon_du_lieu,drug_disease_rows,8359,rows,sau khi loc theo ma DDInter
+nguon_du_lieu,drug_food_rows,857,rows,sau khi loc theo ma DDInter
+nguon_du_lieu,national_drugs,54540,drugs,national_drug.xlsx sheet DanhSach
+nguon_du_lieu,data_size,208,MB,luu tren Google Drive
+crawl,duplicate_rows_removed,272674,rows,"A-B va B-A la mot cap, giu muc nang nhat"
+crawl,merged_unique_pairs,234981,pairs,ddinter_interactions_merged.csv
+crawl,id_range_max,302665,ids,ID lon hon tra ve HTTP 500
+crawl,ids_success,302515,ids,30-31/10/2026; 5 lan chay
+crawl,ids_not_exist,150,ids,HTTP 500 DoesNotExist
+crawl,ids_error,0,ids,
+crawl,final_pairs_filled,100,%,234981/234981 co Interaction va Management
+crawl,pair_not_in_merged,60589,records,~48000 chua 312 thuoc moi; ~12500 cap thieu trong file tai ve
+crawl,new_drugs_found,312,drugs,DDInter1433-DDInter2283
+crawl,duplicate_pair,6945,records,giu ID nho nhat
+crawl,speed,28-32,ids/second,20-25 luong
+crawl_level,moderate,143748,pairs,61.2%
+crawl_level,unknown,42415,pairs,18.0%
+crawl_level,major,39082,pairs,16.6%
+crawl_level,minor,9736,pairs,4.1%
+data_quality,merged_vs_source_files,pass,,"khong thieu, khong thua cap; ma A < B; Level nang nhat"
+data_quality,final_vs_merged,pass,,"cung tap cap; ten thuoc va Level khong lech; khong trung InteractionID"
+data_quality,final_vs_raw_log,pass,,Interaction va Management khop 100%
+data_quality,interaction_none,42415,rows,dung bang so cap Unknown (du lieu goc)
+data_quality,management_dash,51974,rows,du lieu goc
+mapping,rows_drug_ingredient,86884,rows,chay 30/10/2026
+mapping,drugs_with_ingredient,54086,drugs,
+mapping,drugs_fully_mapped,67.1,%,
+mapping,drugs_at_least_one_mapped,76.3,%,
+mapping,needs_review,765,rows,
+mapping_method,no_match,35293,rows,chu yeu duoc lieu khong co trong DDInter
+mapping_method,exact,20405,rows,
+mapping_method,spelling_variant,16121,rows,
+mapping_method,synonym,6979,rows,
+mapping_method,salt_stripped,6834,rows,
+mapping_method,fuzzy_suggestion,471,rows,chi goi y khong tu gan
+mapping_method,no_ingredient,454,rows,
+mapping_method,alternate_name,327,rows,
+import_db,runtime,40,seconds,npm run import-data; 1 transaction
+import_db,rows_drugs,54540,rows,
+import_db,rows_drug_ingredients,86430,rows,
+import_db,rows_interactions,234981,rows,
+import_db,rows_drug_disease_interactions,8359,rows,
+import_db,rows_drug_food_interactions,857,rows,
+import_db,drugs_fully_mapped,36267,drugs,dung duoc ngay trong demo
+api,endpoints,4,endpoints,"drugs, drugs/search, interactions/check, drug-warnings"
+api_test,scenario_major,pass,,Abemaciclib - Adalimumab: Major
+api_test,scenario_moderate,pass,,Abacavir - Methotrexate: Moderate
+api_test,scenario_unknown,pass,,Abacavir - Acyclovir: Unknown
+api_test,scenario_backend_down,n/a,,chi kiem tra tren giao dien
+api_test,scenario_drug_warnings,pass,,Verzenio: 6 luu y benh ly; 1 luu y thuc an
+codebase,lines_of_code,3700,lines,uoc tinh Python va TypeScript
+codebase,unit_tests,0,tests,chua co test tu dong

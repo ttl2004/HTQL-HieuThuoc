@@ -1,0 +1,3 @@
+part,repo,file,description
+RAG,pharmacy-base-rag,metrics/pharmacy-base-rag.csv,"Bo 100 cau: truy xuat 80 cau va sinh cau tra loi 100 cau"
+Tuong tac thuoc,drug-interaction-ddinter,metrics/drug-interaction-ddinter.csv,"Crawl DDInter, kiem dinh du lieu, anh xa hoat chat, import CSDL, kiem thu API"

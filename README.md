@@ -10,6 +10,7 @@ Repo quản lý tiến độ và lưu minh chứng (evidence) hằng tuần củ
 | [drugdb-core](https://github.com/ttl2004/drugdb-core) | ETL / CSDL dược |
 | [pharmacy-management-admin-frontend](https://github.com/blueT52Hz/pharmacy-management-admin-frontend) | Frontend trang quản trị |
 | [pharmacy-base-rag](https://github.com/blueT52Hz/pharmacy-base-rag) | RAG hỏi đáp thông tin thuốc |
+| [drug-interaction-ddinter](https://github.com/blueT52Hz/drug-interaction-ddinter) | Cảnh báo tương tác thuốc  |
 
 ## Cấu trúc thư mục
 
@@ -17,13 +18,14 @@ Repo quản lý tiến độ và lưu minh chứng (evidence) hằng tuần củ
 HTQY-HieuThuoc/
 ├── README.md                 # file này
 └── Evidence/                 # minh chứng theo tuần
-    ├── W01/ ... W03/         # các tuần trước
-    └── W04/
+    ├── W01/ ... W04/         # các tuần trước
+    └── W05/
         ├── README.md         # tóm tắt tuần: repo, phân công, issue, PR, reviewer, kết quả
         ├── metrics.csv       # mục lục số liệu, trỏ tới từng file trong metrics/
         ├── metrics/          # số liệu chi tiết, mỗi phần một file (số cột khác nhau)
         │   ├── drugdb-core.csv
-        │   └── pharmacy-base-rag.csv
+        │   ├── pharmacy-base-rag.csv
+        │   └── drug-interaction-ddinter.csv
         ├── test-results.md   # kết quả kiểm thử
         └── figures/          # hình ảnh, biểu đồ, ảnh chụp màn hình
 ```
