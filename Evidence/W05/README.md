@@ -11,7 +11,7 @@
 | pharmacy-management-system-backend | Backend  | https://github.com/ttl2004/pharmacy-management-system-backend |
 | drugdb-core | ETL/CSDL dược | https://github.com/ttl2004/drugdb-core |
 | pharmacy-management-admin-frontend | Frontend  | https://github.com/blueT52Hz/pharmacy-management-admin-frontend |
-| pharmacy-base-rag | RAG | https://github.com/blueT52Hz/pharmacy-base-rag |
+| pharmacy-rag | RAG | https://github.com/blueT52Hz/pharmacy-rag |
 | drug-interaction-ddinter | Tương tác thuốc | https://github.com/blueT52Hz/drug-interaction-ddinter |
 
 

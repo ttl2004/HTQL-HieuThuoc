@@ -1,0 +1,2 @@
+part,repo,file,description
+Tro ly thuoc (POS),pharmacy-rag,metrics/rag-assistant-pos.csv,"Tich hop RAG vao man ban hang: build index, do tre stream, chay thu 4 cau qua Backend"

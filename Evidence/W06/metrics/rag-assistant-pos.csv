@@ -1,0 +1,37 @@
+group,metric,value,unit,note
+moi_truong,cpu,i5-12450H,,12 luong; RAM 15 GB; khong GPU
+moi_truong,llm_model,deepseek-chat,,goi truc tiep api.deepseek.com; temperature 0.2
+moi_truong,embedding_model,intfloat/multilingual-e5-small,,chay local; cosine
+du_lieu,drugs,50,drugs,data/tap-mau-thuoc.csv; nhan thuoc DailyMed tieng Viet
+du_lieu,chunks,1019,chunks,toi da 1000 ky tu; chong lan 150
+du_lieu,chunk_max_size,1000,chars,
+du_lieu,chunk_overlap,150,chars,
+build_index,embedding_time,65,seconds,1019 doan tren CPU
+pipeline,top_k,6,chunks,co dinh; chua co nguong diem
+pipeline,retrieval_latency,20,ms,uoc tinh
+integration,endpoints_rag,2,endpoints,"GET /info, POST /chat (SSE)"
+integration,endpoints_backend,2,endpoints,"GET /assistant/info, POST /assistant/chat"
+integration,rate_limit,10,questions/minute,moi tai khoan
+integration,question_max_length,2000,chars,kiem tra o Backend
+integration,error_code_unavailable,1610,,ASSISTANT_UNAVAILABLE khi RAG tat/loi
+integration,internal_auth,pass,,X-Internal-Key; secrets.compare_digest
+smoke_test,questions_total,4,questions,Backend -> RAG -> DeepSeek; dang nhap admin
+smoke_test,questions_in_data,3,questions,
+smoke_test,questions_out_of_scope,1,questions,gia Panadol Extra
+smoke_test,pass,4,questions,4/4 dung noi dung hoac dung hanh vi tu choi
+smoke_test,top1_correct_drug_section,3,questions,3/3 cau trong du lieu
+smoke_test,top1_score_in_data_min,0.90,cosine,
+smoke_test,top1_score_in_data_max,0.93,cosine,
+smoke_test,top1_score_out_of_scope,0.83,cosine,Pantoprazole - Tac dung phu (khong lien quan)
+smoke_test,refusal_out_of_scope,1,answers,1/1; khong bia gia
+smoke_test,ttft_min,0.53,seconds,thoi gian den chu dau tien
+smoke_test,ttft_max,0.71,seconds,
+smoke_test,ttft_avg,0.61,seconds,4 cau
+smoke_test,total_latency_min,1.22,seconds,
+smoke_test,total_latency_max,4.04,seconds,cau 3 tra loi dai
+smoke_test,total_latency_avg,2.01,seconds,4 cau
+smoke_q1,metformin_chong_chi_dinh,pass,,top1 0.90; TTFT 0.59 s; tong 1.35 s; du 3 y
+smoke_q2,ibuprofen_lieu_luong,pass,,top1 0.93; TTFT 0.53 s; tong 1.44 s
+smoke_q3,amoxicillin_tac_dung_phu,pass,,top1 0.90; TTFT 0.71 s; tong 4.04 s
+smoke_q4,panadol_gia_ngoai_du_lieu,pass,,top1 0.83; TTFT 0.62 s; tong 1.22 s; tu choi dung
+han_che,duplicate_chunks_in_result,1,cases,cau 3: 2 doan cung diem 0.8977

@@ -9,7 +9,7 @@ Repo quản lý tiến độ và lưu minh chứng (evidence) hằng tuần củ
 | [pharmacy-management-system-backend](https://github.com/ttl2004/pharmacy-management-system-backend) | Backend |
 | [drugdb-core](https://github.com/ttl2004/drugdb-core) | ETL / CSDL dược |
 | [pharmacy-management-admin-frontend](https://github.com/blueT52Hz/pharmacy-management-admin-frontend) | Frontend trang quản trị |
-| [pharmacy-base-rag](https://github.com/blueT52Hz/pharmacy-base-rag) | RAG hỏi đáp thông tin thuốc |
+| [pharmacy-rag](https://github.com/blueT52Hz/pharmacy-rag) | RAG hỏi đáp thông tin thuốc |
 | [drug-interaction-ddinter](https://github.com/blueT52Hz/drug-interaction-ddinter) | Cảnh báo tương tác thuốc  |
 
 ## Cấu trúc thư mục
