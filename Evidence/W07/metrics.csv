@@ -1,0 +1,2 @@
+part,repo,file,description
+OCR,OCR-Baseline,metrics/ocr-llm.csv,"So sanh OCR cuc bo / Google Cloud Vision / DeepSeek OCR va OCR + LLM tren 100 anh ViFoodLabel; kiem thu baseline"

@@ -1,0 +1,85 @@
+group,metric,value,unit,note
+du_lieu,dataset,ViFoodLabel,,anh bao bi thuc pham tieng Viet co nhan JSON
+du_lieu,images_total,600,images,
+du_lieu,tuning_set,50,images,chi dung chon cau hinh OCR cuc bo
+du_lieu,holdout_set,100,images,khong trung tap tinh chinh; seed 42; moi so lieu do tren tap nay
+du_lieu,label_items,2417,items,so muc nhan duoc danh gia
+moi_truong,local_ocr_hardware,CPU,,4 luong; khong GPU
+moi_truong,llm_model,deepseek-chat,,temperature 0; che do JSON
+ocr_local,detector,PP-OCRv5_server_det,,PaddleOCR
+ocr_local,recognizer,vgg_transformer,,VietOCR
+ocr_local,kv_cache_speedup,1.8,x,ket qua giong het ban goc
+ocr_local_v1,char_acc,75.0,%,CLAHE bat; xoay 0.5; det 960 px; le cat 0.15
+ocr_local_v1,exact_match,37.0,%,
+ocr_local_v1,avg_latency,5.2,seconds,
+ocr_local_v2,char_acc,77.7,%,tat CLAHE; xoay 0.9; KV-cache
+ocr_local_v2,exact_match,43.8,%,
+ocr_local_v2,avg_latency,5.1,seconds,
+ocr_local_v3,char_acc,82.6,%,v2 + det 1600 px + le cat 0.04 (tot nhat)
+ocr_local_v3,char_acc_no_diacritics,84.9,%,
+ocr_local_v3,exact_match,52.3,%,
+ocr_local_v3,word_present,83.6,%,
+ocr_local_v3,nutrition_numbers,92.9,%,
+ocr_local_v3,avg_latency,8.7,seconds,p90 10.6 s; max 14.0 s
+ocr_local_v3,unreadable_items,1.1,%,diem < 0.3
+ocr_local_v3,diacritics_only_error,7.2,%,
+ocr_local_sig,v3_minus_v1,+7.6,points,CI95 [+5.7; +9.9]
+ocr_local_sig,v3_minus_v2,+4.9,points,CI95 [+3.5; +6.4]
+ocr_vision,char_acc,95.7,%,Google Cloud Vision DOCUMENT_TEXT_DETECTION
+ocr_vision,char_acc_no_diacritics,96.2,%,
+ocr_vision,exact_match,76.4,%,
+ocr_vision,word_present,95.6,%,
+ocr_vision,nutrition_numbers,97.3,%,
+ocr_vision,avg_latency,0.5,seconds,p90 0.6 s; max 0.9 s; gom thoi gian mang
+ocr_vision,unreadable_items,0.0,%,
+ocr_vision,diacritics_only_error,2.7,%,
+ocr_vision,errors,0,images,0/100
+ocr_deepseek,char_acc,88.4,%,DeepSeek OCR API
+ocr_deepseek,char_acc_no_diacritics,91.2,%,
+ocr_deepseek,exact_match,67.2,%,
+ocr_deepseek,word_present,82.9,%,
+ocr_deepseek,nutrition_numbers,92.2,%,
+ocr_deepseek,avg_latency,4.6,seconds,p90 10.6 s; max 15.3 s
+ocr_deepseek,unreadable_items,4.2,%,
+ocr_deepseek,diacritics_only_error,8.3,%,
+ocr_deepseek,repetition_loop,11,images,11/100; mat van ban sau diem lap
+ocr_deepseek,empty_page_rate,10,%,uoc tinh theo luot goi
+ocr_deepseek,char_acc_on_loop_images,51.0,%,11 anh bi lap (Vision 96.8%)
+ocr_deepseek,strip_split_fix,93.3,%,11 anh lap; cat 3 dai ngang khi phat hien lap
+ocr_sig,vision_minus_local_v3,+13.1,points,CI95 [+9.0; +17.7]
+ocr_sig,deepseek_minus_local_v3,+5.8,points,CI95 [+0.8; +10.6]
+ocr_sig,vision_minus_deepseek,+7.2,points,CI95 [+2.9; +12.5]
+llm_local_v3,f1_overall,69.9,%,P 69.4% / R 70.4%; prompt v1
+llm_local_v3,f1_ingredients,67.8,%,
+llm_local_v3,f1_additives,71.0,%,
+llm_local_v3,f1_warnings,56.9,%,
+llm_local_v3,f1_nutrition,78.1,%,
+llm_local_v3,extract_correct_ocr_good,81.6,%,928/1137
+llm_local_v3,extract_correct_ocr_bad,17.8,%,54/303
+llm_local_v3,added_numbers,5.9,%,90/1535; 81 sua dung loi OCR; 9 sai
+llm_vision_v1,f1_overall,79.7,%,P 76.6% / R 83.1%; prompt v1
+llm_vision_v1,f1_ingredients,77.6,%,
+llm_vision_v1,f1_additives,83.6,%,
+llm_vision_v1,f1_warnings,72.7,%,
+llm_vision_v1,f1_nutrition,87.2,%,
+llm_vision_v1,extract_correct_ocr_good,86.1,%,1186/1377
+llm_vision_v1,extract_correct_ocr_bad,30.2,%,19/63
+llm_vision_v1,added_numbers,1.7,%,29/1698; 24 sua dung loi OCR; 5 sai
+llm_vision_v2,f1_overall,83.7,%,P 81.8% / R 85.6%; prompt v2 co quy uoc phan chia truong
+llm_vision_v2,f1_ingredients,84.7,%,
+llm_vision_v2,f1_additives,94.3,%,
+llm_vision_v2,f1_warnings,71.5,%,khong khac biet so voi v1
+llm_vision_v2,f1_nutrition,86.6,%,khong khac biet so voi v1
+llm_vision_v2,extract_correct_ocr_good,90.8,%,
+llm_vision_v2,added_numbers_wrong,4,numbers,
+llm_sig,vision_v1_minus_local_v3_f1,+9.8,points,CI95 [+7.2; +12.6]
+llm_sig,prompt_v2_minus_v1_f1,+3.9,points,CI95 [+2.2; +5.5]
+llm_error,missed_items_vision,235,items,thanh phan + phu gia + canh bao
+llm_error,convention_mismatch,73,%,31% xep sang truong khac + 42% gop/tach khac nhan
+llm_error,ocr_wrong,19,%,
+llm_error,llm_truly_missed,6,%,
+latency,local_v3_plus_llm,10.8,seconds/image,OCR 8.7 s + LLM 2.1 s
+latency,vision_plus_llm,2.7,seconds/image,OCR 0.5 s + LLM 2.2 s
+cost,vision,1.5,USD/1000 images,1000 anh/thang mien phi
+cost,deepseek_ocr,0.225,USD/1000 pages,
+baseline_app,automated_tests,37,tests,37/37 pass (pytest; 14/11/2026)
