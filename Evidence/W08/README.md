@@ -37,6 +37,6 @@
 | Trần Tiểu Long | pharmacy-management-system-backend | #48 | #49 | Nguyễn Hoa Thanh Tùng | Done |
 |Nguyễn Hoa Thanh Tùng | pharmacy-management-admin-frontend | #11 | #12| Trần Tiểu Long  | Done |
 |Nguyễn Hoa Thanh Tùng | pharmacy-management-admin-frontend | #13 | #10 | Trần Tiểu Long  | Done |
-
+|Nguyễn Hoa Thanh Tùng & Trần Tiểu Long | drug-interaction-ddinter | #4 | #5 | Trần Tiểu Long & Nguyễn Hoa Thanh Tùng | Done |
 
 
